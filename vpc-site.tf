@@ -41,20 +41,7 @@ resource "volterra_aws_vpc_site" "example" {
             }
         }
 
-        az_nodes {
-            aws_az_name = var.aws_az2
-            local_subnet {
-                existing_subnet_id = var.internal_subnets["az2"].id
-            } 
-        }
-
-        az_nodes {
-            aws_az_name = var.aws_az3
-            local_subnet {
-                existing_subnet_id = var.internal_subnets["az3"].id
-            }
-        }
-
+ 
         no_network_policy        = true
         no_forward_proxy         = true
         no_outside_static_routes = true
